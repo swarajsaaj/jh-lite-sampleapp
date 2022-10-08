@@ -2,13 +2,10 @@ name: Triage pull requests and issues
 on:
   issues:
     types: opened
-  pull_request:
+  pull_request_target:
     types: opened
 jobs:
   apply-label:
-    permissions:
-      contents: read # for andymckay/labeler to determine modified files
-      pull-requests: write # for andymckay/labeler to add labels to PRs
     runs-on: ubuntu-latest
     steps:
       - name: initial labeling
@@ -16,4 +13,3 @@ jobs:
         with:
           add-labels: "area: triage"
           ignore-if-labeled: true
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
