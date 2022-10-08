@@ -16,3 +16,4 @@ jobs:
         with:
           add-labels: "area: triage"
           ignore-if-labeled: true
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
