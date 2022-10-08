@@ -6,6 +6,9 @@ on:
     types: opened
 jobs:
   apply-label:
+    permissions:
+      contents: read # for andymckay/labeler to determine modified files
+      pull-requests: write # for andymckay/labeler to add labels to PRs
     runs-on: ubuntu-latest
     steps:
       - name: initial labeling
